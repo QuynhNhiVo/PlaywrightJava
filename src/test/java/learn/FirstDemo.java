@@ -1,6 +1,8 @@
+package learn;
+
 import com.microsoft.playwright.*;
+import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.options.AriaRole;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import java.nio.file.Paths;
