@@ -14,11 +14,11 @@ public class PropertiesHelpers {
     private static String linkFile;
     private static FileInputStream file;
     private static FileOutputStream out;
-    private static String relPropertiesFilePathDefault = "src/test/resources/configs/config.properties";
+    private static String relPropertiesFilePathDefault = "src/test/resources/configs/configs.properties";
 
     public static Properties loadAllFiles() {
         LinkedList<String> files = new LinkedList<>();
-        files.add("src/test/resources/configs/config.properties");
+        files.add("src/test/resources/configs/configs.properties");
 
         try {
             properties = new Properties();

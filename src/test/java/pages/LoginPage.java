@@ -1,21 +1,25 @@
 package pages;
 
-import com.microsoft.playwright.Page;
+import constants.ConfigData;
+import factorys.PlaywrightFactory;
+import static keywords.WebUI.*;
 
 public class LoginPage {
 
     private String admin = "//button[normalize-space()='Super Admin']";
     private String login = "//button[@type='submit']";
+    private String textTitleLogin = "HRSALE | Log in";
 
-    private final Page page;
-
-    public LoginPage(Page page) {
-        this.page = page;
-    }
 
     public void loginWeb(){
-        page.navigate("https://app.hrsale.com/erp/login");
-        page.click(admin);
-        page.click(login);
+//        PlaywrightFactory.getPage().navigate("https://app.hrsale.com/erp/login");
+//        PlaywrightFactory.getPage().click(admin);
+//        PlaywrightFactory.getPage().click(login);
+        openWebsite(ConfigData.URL);
+        verifyURL(ConfigData.URL);
+        verifyTitle(textTitleLogin);
+        clickElement(admin);
+        clickElement(login);
+        sleep(5);
     }
 }
