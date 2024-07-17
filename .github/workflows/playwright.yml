@@ -7,7 +7,7 @@ on:
   pull_request:
     branches: [ main, master ]
 jobs:
-  test:
+  testcases:
     timeout-minutes: 30
     strategy:
       fail-fast: false
