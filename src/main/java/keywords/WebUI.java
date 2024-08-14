@@ -23,6 +23,10 @@ public class WebUI {
         LogUtils.info("Click element: " + locator);
     }
 
+    public static void getTextElement(String locator){
+        getPage().textContent(locator);
+    }
+
     public static void verifyURL(String url) {
         assertThat(getPage()).hasURL(url);
     }

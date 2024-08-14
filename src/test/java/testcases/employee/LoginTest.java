@@ -1,4 +1,4 @@
-package testcases;
+package testcases.employee;
 
 import common.BaseTest;
 import org.testng.annotations.BeforeMethod;
@@ -15,6 +15,6 @@ public class LoginTest extends BaseTest {
 
     @Test
     public void TC_login(){
-        loginPage.loginWeb();
+        loginPage.loginEmployee();
     }
 }

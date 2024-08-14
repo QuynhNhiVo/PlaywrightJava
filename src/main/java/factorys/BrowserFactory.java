@@ -29,7 +29,7 @@ public class BrowserFactory {
             case "edge":
                 LogUtils.info("Launch Edge.......");
 //                PlaywrightFactory.setBrowser(playwright.chromium().launch(new BrowserType.LaunchOptions().setChannel("edge").setHeadless(ConfigData.HEADLESS)));
-                browser = PlaywrightFactory.getPlaywright().chromium().launch(new BrowserType.LaunchOptions().setChannel("edge").setHeadless(ConfigData.HEADLESS));
+                browser = PlaywrightFactory.getPlaywright().chromium().launch(new BrowserType.LaunchOptions().setChannel("msedge").setHeadless(ConfigData.HEADLESS));
                 break;
             case "firefox":
                 LogUtils.info("Launch Firefox.......");
