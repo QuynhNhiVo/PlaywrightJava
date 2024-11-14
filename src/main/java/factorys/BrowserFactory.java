@@ -5,6 +5,7 @@ import constants.ConfigData;
 import utils.LogUtils;
 
 import java.awt.*;
+import java.util.List;
 import java.util.Locale;
 
 public class BrowserFactory {
@@ -24,17 +25,29 @@ public class BrowserFactory {
             case "chrome":
                 LogUtils.info("Launch Chrome.......");
 //                PlaywrightFactory.setBrowser(playwright.chromium().launch(new BrowserType.LaunchOptions().setChannel("chrome").setHeadless(ConfigData.HEADLESS)));
-                browser = PlaywrightFactory.getPlaywright().chromium().launch(new BrowserType.LaunchOptions().setChannel("chrome").setHeadless(ConfigData.HEADLESS));
+                browser = PlaywrightFactory.getPlaywright().chromium().launch
+                        (new BrowserType.LaunchOptions()
+                                .setChannel("chrome")
+                                .setHeadless(ConfigData.HEADLESS)
+                                .setArgs(List.of("--start-maximized")));
                 break;
             case "edge":
                 LogUtils.info("Launch Edge.......");
 //                PlaywrightFactory.setBrowser(playwright.chromium().launch(new BrowserType.LaunchOptions().setChannel("edge").setHeadless(ConfigData.HEADLESS)));
-                browser = PlaywrightFactory.getPlaywright().chromium().launch(new BrowserType.LaunchOptions().setChannel("msedge").setHeadless(ConfigData.HEADLESS));
+                browser = PlaywrightFactory.getPlaywright().chromium().launch
+                        (new BrowserType.LaunchOptions()
+                                .setChannel("msedge")
+                                .setHeadless(ConfigData.HEADLESS)
+                                .setArgs(List.of("--start-maximized")));
                 break;
             case "firefox":
                 LogUtils.info("Launch Firefox.......");
 //                PlaywrightFactory.setBrowser(playwright.chromium().launch(new BrowserType.LaunchOptions().setChannel("firefox").setHeadless(ConfigData.HEADLESS)));
-                browser = PlaywrightFactory.getPlaywright().chromium().launch(new BrowserType.LaunchOptions().setChannel("firefox").setHeadless(ConfigData.HEADLESS));
+                browser = PlaywrightFactory.getPlaywright().chromium().launch
+                        (new BrowserType.LaunchOptions()
+                                .setChannel("firefox")
+                                .setHeadless(ConfigData.HEADLESS)
+                                .setArgs(List.of("--start-maximized")));
                 break;
             default:
                 LogUtils.info("Launch default browser (Chromium).......");
@@ -42,7 +55,8 @@ public class BrowserFactory {
                 browser = PlaywrightFactory.getPlaywright().chromium().launch();
         }
         PlaywrightFactory.setBrowser(browser);
-        PlaywrightFactory.setContext(PlaywrightFactory.getBrowser().newContext(new Browser.NewContextOptions().setViewportSize(width, height)));
+//        PlaywrightFactory.setContext(PlaywrightFactory.getBrowser().newContext(new Browser.NewContextOptions().setViewportSize(width, height)));
+        PlaywrightFactory.setContext(PlaywrightFactory.getBrowser().newContext(new Browser.NewContextOptions().setViewportSize(null)));
         PlaywrightFactory.setPage(PlaywrightFactory.getContext().newPage());
         return PlaywrightFactory.getPage();
     }
