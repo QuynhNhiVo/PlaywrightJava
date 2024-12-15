@@ -1,8 +1,10 @@
 package keywords;
 
+import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
 import com.microsoft.playwright.assertions.LocatorAssertions;
 import com.microsoft.playwright.assertions.PageAssertions;
+import com.microsoft.playwright.options.AriaRole;
 import factorys.PlaywrightFactory;
 import utils.LogUtils;
 import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertThat;
@@ -25,6 +27,15 @@ public class WebUI {
 
     public static void getTextElement(String locator){
         getPage().textContent(locator);
+    }
+
+    public static void sendKey(String locator, String text){
+        getPage().fill(locator, text);
+        LogUtils.info("Set: " + text + " - To Locator: " + locator);
+    }
+
+    public static void clear(String locator){
+        getPage().locator(locator).clear();
     }
 
     public static void verifyURL(String url) {

@@ -1,6 +1,7 @@
-package pages;
+package WebTesting.pages;
 
-import pages.admin.DashboardPage;
+import WebTesting.pages.admin.DashboardPage;
+import WebTesting.testcases.admin.EmployeesTest;
 
 import static keywords.WebUI.*;
 
@@ -11,7 +12,8 @@ public class CommonPage{
     private String logout = "//i[@class='feather icon-power']";
 
     private LoginPage loginPage;
-    private DashboardPage dashboardPage;
+    private DashboardPage dashboardPage;;
+    private EmployeesTest employeesTest;
 
     public void Logout(){
         clickElement(logout);
@@ -30,5 +32,12 @@ public class CommonPage{
             dashboardPage = new DashboardPage();
         }
         return dashboardPage;
+    }
+
+    public EmployeesTest getEmployeesPage(){
+        if (employeesTest == null) {
+            employeesTest = new EmployeesTest();
+        }
+        return employeesTest;
     }
 }

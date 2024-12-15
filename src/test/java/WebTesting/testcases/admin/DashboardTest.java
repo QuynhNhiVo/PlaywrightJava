@@ -1,9 +1,9 @@
-package testcases.admin;
+package WebTesting.testcases.admin;
 
-import common.BaseTest;
+import WebTesting.common.BaseTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import pages.LoginPage;
+import WebTesting.pages.LoginPage;
 
 public class DashboardTest extends BaseTest {
     LoginPage loginPage;

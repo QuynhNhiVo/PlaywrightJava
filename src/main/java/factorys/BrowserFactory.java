@@ -20,6 +20,7 @@ public class BrowserFactory {
 
 
     public static Page setupBrowser(String browserName) {
+        // Channel can be "chrome", "msedge", "chrome-beta", "msedge-beta" or "msedge-dev".
         PlaywrightFactory.setPlaywright(Playwright.create());
         switch (browserName.toLowerCase(Locale.ROOT).trim()) {
             case "chrome":
@@ -55,6 +56,7 @@ public class BrowserFactory {
                 browser = PlaywrightFactory.getPlaywright().chromium().launch();
         }
         PlaywrightFactory.setBrowser(browser);
+//        Set size browser
 //        PlaywrightFactory.setContext(PlaywrightFactory.getBrowser().newContext(new Browser.NewContextOptions().setViewportSize(width, height)));
         PlaywrightFactory.setContext(PlaywrightFactory.getBrowser().newContext(new Browser.NewContextOptions().setViewportSize(null)));
         PlaywrightFactory.setPage(PlaywrightFactory.getContext().newPage());

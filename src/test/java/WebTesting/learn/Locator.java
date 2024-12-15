@@ -1,4 +1,4 @@
-package learn;
+package WebTesting.learn;
 
 import com.microsoft.playwright.Browser;
 import com.microsoft.playwright.BrowserType;

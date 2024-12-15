@@ -1,7 +1,6 @@
-package pages.admin;
+package WebTesting.pages.admin;
 
-import pages.CommonPage;
-import utils.LogUtils;
+import WebTesting.pages.CommonPage;
 
 import static keywords.WebUI.*;
 

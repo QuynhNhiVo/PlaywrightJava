@@ -1,4 +1,4 @@
-package common;
+package WebTesting.common;
 
 import factorys.BrowserFactory;
 import factorys.PlaywrightFactory;
