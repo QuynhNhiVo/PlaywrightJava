@@ -1,6 +1,10 @@
 package WebTesting.learn;
 
+import com.microsoft.playwright.Locator;
+import com.microsoft.playwright.Page;
 import com.microsoft.playwright.options.SelectOption;
+import com.microsoft.playwright.options.WaitForSelectorState;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertThat;
 
@@ -60,8 +64,14 @@ public class Dropdown extends BaseTestDemo {
         page.fill("//input[@id='password']", "123456");
         page.keyboard().press("Enter");
         page.click("//span[normalize-space()='Tasks']");
-        page.click("//a[normalize-space()='New Task']");
+//        page.locator("//a[normalize-space()='New Task']").waitFor(new Locator.WaitForOptions().setState(WaitForSelectorState.VISIBLE).setTimeout(30000));
+        page.locator("//a[normalize-space()='New Task']").click();
+//        page.locator("//h4[@id='myModalLabel']").waitFor(new Locator.WaitForOptions().setState(WaitForSelectorState.VISIBLE).setTimeout(30000));
+        System.out.println(page.textContent("//h4[@id='myModalLabel']"));
         String Assignees[] ={"Admin Anh Tester", "Admin Example"};
+        page.locator("//select[@id='assignees']").waitFor(new Locator.WaitForOptions().setState(WaitForSelectorState.VISIBLE).setTimeout(30000));
         page.selectOption("//select[@id='assignees']", Assignees);
+        System.out.println(page.textContent("(//div[@class='filter-option-inner'])[11]//div"));
+        page.close();
     }
 }
