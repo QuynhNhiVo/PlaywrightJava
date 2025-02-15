@@ -1,4 +1,4 @@
-package WebTesting.learn;
+package Learning;
 
 import com.microsoft.playwright.*;
 import com.microsoft.playwright.options.AriaRole;

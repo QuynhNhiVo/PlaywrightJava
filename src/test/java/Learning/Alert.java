@@ -1,4 +1,4 @@
-package WebTesting.learn;
+package Learning;
 
 import org.testng.annotations.Test;
 import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertThat;

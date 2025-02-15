@@ -1,9 +1,6 @@
-package WebTesting.learn;
+package Learning;
 
 import com.microsoft.playwright.Frame;
-import com.microsoft.playwright.FrameLocator;
-import com.microsoft.playwright.Locator;
-import com.microsoft.playwright.options.LoadState;
 import org.testng.annotations.Test;
 
 import java.util.List;

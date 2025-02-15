@@ -1,4 +1,4 @@
-package WebTesting.learn;
+package Learning;
 
 import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;

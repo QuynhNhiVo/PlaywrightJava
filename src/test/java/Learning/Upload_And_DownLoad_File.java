@@ -1,4 +1,4 @@
-package WebTesting.learn;
+package Learning;
 
 import com.microsoft.playwright.Download;
 import com.microsoft.playwright.FileChooser;
